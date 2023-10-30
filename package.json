@@ -1,0 +1,32 @@
+{
+  "name": "async-tests-examples",
+  "packageManager": "yarn@4.0.0-rc.53",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "test:ui": "vitest --ui"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "1.5.1",
+    "@testing-library/dom": "9.3.3",
+    "@testing-library/jest-dom": "6.1.4",
+    "@testing-library/react": "14.0.0",
+    "@testing-library/user-event": "14.5.1",
+    "@types/eslint": "^8",
+    "@types/lodash": "^4",
+    "@types/react": "18.2.28",
+    "@types/react-dom": "18.2.13",
+    "@vitest/ui": "0.34.6",
+    "axios": "1.5.1",
+    "eslint": "8.51.0",
+    "eslint-config-fuks": "1.10.1",
+    "eslint-plugin-testing-library": "6.1.0",
+    "eslint-plugin-vitest": "0.3.2",
+    "jsdom": "22.1.0",
+    "lodash": "4.17.21",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "5.2.2",
+    "vitest": "0.34.6"
+  }
+}
