@@ -20,7 +20,5 @@ beforeAll(() => {
   // https://github.com/testing-library/react-testing-library/issues/1197
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  globalThis.jest = {
-    advanceTimersByTime: vi.advanceTimersByTime.bind(vi),
-  };
+  globalThis.jest = vi;
 });
