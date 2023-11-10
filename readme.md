@@ -3,3 +3,4 @@
 Тесты на компоненты - это не юнит тесты
 Сказать про userEvent setup, что он не позволяет заново делать unhover/hover
 userEvent внутри waitFor - это плохо
+Рассказать про jest.advanceTimersToNextTimer
