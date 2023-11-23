@@ -4,3 +4,4 @@
 Сказать про userEvent setup, что он не позволяет заново делать unhover/hover
 userEvent внутри waitFor - это плохо
 Рассказать про jest.advanceTimersToNextTimer
+when/should, Arrange/Act/Assert
