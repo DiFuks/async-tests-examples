@@ -1,6 +1,6 @@
 {
   "name": "async-tests-examples",
-  "packageManager": "yarn@4.0.0-rc.53",
+  "packageManager": "yarn@4.1.0",
   "type": "module",
   "scripts": {
     "test": "vitest",
