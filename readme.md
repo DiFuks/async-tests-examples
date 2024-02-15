@@ -13,3 +13,5 @@ userEvent внутри waitFor - это плохо
 when/should, Arrange/Act/Assert
 
 Не нужно тестировать "не свою" логику
+
+Сказать про shouldAdvanceTime и findByText
