@@ -1,7 +1,13 @@
 import { FC, useState } from 'react';
 
 import { describe, it, expect, vi } from 'vitest';
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import {
+  act,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
 import { wait } from './utils';
@@ -96,6 +102,32 @@ describe('Button with timeout', () => {
     });
 
     expect(dialog).toHaveTextContent('1');
+
+    vi.useRealTimers();
+  });
+
+  it('[Good] userEvent with fakeTimers and shouldAdvanceTime', async () => {
+    vi.useFakeTimers({ shouldAdvanceTime: true });
+
+    render(<Button timeout={1_000} />);
+
+    const ue = userEvent.setup({
+      advanceTimers: vi.advanceTimersByTime.bind(vi),
+    });
+
+    const button = screen.getByRole('button', { name: 'Click me' });
+    const dialog = screen.getByRole('dialog');
+
+    await ue.click(button);
+
+    await waitFor(
+      () => {
+        expect(dialog).toHaveTextContent('1');
+      },
+      {
+        timeout: 2_000,
+      },
+    );
 
     vi.useRealTimers();
   });
