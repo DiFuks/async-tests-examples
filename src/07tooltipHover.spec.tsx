@@ -14,12 +14,12 @@ const Component: FC = () => {
         onMouseEnter={() => {
           setTimeout(() => {
             setIsHovered(true);
-          }, 200);
+          }, 1_000);
         }}
         onMouseLeave={() => {
           setTimeout(() => {
             setIsHovered(false);
-          }, 200);
+          }, 1_000);
         }}
         type='button'
       >
@@ -43,7 +43,7 @@ it('Tooltip should be visible on hover', async () => {
   });
 
   act(() => {
-    vi.advanceTimersByTime(200);
+    vi.advanceTimersByTime(1_000);
   });
 
   expect(screen.getByRole('tooltip').textContent).toBe('hello');
@@ -52,9 +52,29 @@ it('Tooltip should be visible on hover', async () => {
     advanceTimers: vi.advanceTimersByTime.bind(vi),
   });
   act(() => {
-    vi.advanceTimersByTime(200);
+    vi.advanceTimersByTime(1_000);
   });
   expect(screen.queryByText('hello')).toBeNull();
 
   vi.useRealTimers();
+});
+
+it('Tooltip should be visible on hover (shouldAdvanceTime)', async () => {
+  vi.useFakeTimers({ shouldAdvanceTime: true });
+
+  render(<Component />);
+
+  const button = screen.getByRole('button', {
+    name: 'test-button!',
+  });
+
+  await userEvent.hover(button, {
+    advanceTimers: vi.advanceTimersByTime.bind(vi),
+  });
+
+  const tooltip = await screen.findByRole('tooltip', undefined, {
+    timeout: 2_000,
+  });
+
+  expect(tooltip.textContent).toBe('hello');
 });
