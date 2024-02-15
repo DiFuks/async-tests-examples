@@ -106,8 +106,8 @@ describe('Button with timeout', () => {
     vi.useRealTimers();
   });
 
-  it('[Good] userEvent with fakeTimers and shouldAdvanceTime', async () => {
-    vi.useFakeTimers({ shouldAdvanceTime: true });
+  it('[Good] userEvent with fakeTimers and waitFor', async () => {
+    vi.useFakeTimers();
 
     render(<Button timeout={1_000} />);
 

@@ -59,8 +59,8 @@ it('Tooltip should be visible on hover', async () => {
   vi.useRealTimers();
 });
 
-it('Tooltip should be visible on hover (shouldAdvanceTime)', async () => {
-  vi.useFakeTimers({ shouldAdvanceTime: true });
+it('Tooltip should be visible on hover (find)', async () => {
+  vi.useFakeTimers();
 
   render(<Component />);
 
