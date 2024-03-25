@@ -15,3 +15,5 @@ when/should, Arrange/Act/Assert
 Не нужно тестировать "не свою" логику
 
 Сказать про shouldAdvanceTime и findByText
+
+Сказать про msw, что это не моки, а моки на уровне сети
